@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>homepage</title>
     <style>
         body{
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -12,11 +12,12 @@
 </head>
 <body>
     <h1>URl-shortener</h1>
-    <!-- here {locals} used as object to access the variable pass from url/controller/handleGenerateShortUrl function -->
+    <!-- here {locals} used as object and variable(is) here come or render from url/controller/handleGenerateShortUrl function -->
     <% if (locals.id) { %>
         <p>URL generated :http://localhost:8001/url/<%= id %></p>
     <% } %>
      
+    <!-- if we give url link in form it pass the url to /url route -->
     <div>
         <form method="post" action="/url" >
             <label>enter your original url</label>
@@ -28,6 +29,7 @@
         <button type="submit">generate</button>
     </div>
     <div>
+        <!-- if user hit / req in staticroute variable(urls) render from /routes/staticroute -->
         <% if (locals.urls) { %>
             <table>
                 <thead>
